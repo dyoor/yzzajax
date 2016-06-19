@@ -15,7 +15,7 @@ import tornado.web
 
 import json
 
-import tornado.database
+import torndb
 
 class YZZ_JSON(json.JSONEncoder):
     def default(self, obj):
