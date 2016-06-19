@@ -16,7 +16,6 @@ import tornado.options
 import tornado.web
 
 import json
-import simplejson
 
 #apt-get install mysql
 #apt-get install libmysqlclient-dev
