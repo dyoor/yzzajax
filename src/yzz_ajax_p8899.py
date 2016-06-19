@@ -42,7 +42,8 @@ class MainQr(tornado.web.RequestHandler):
     def post(self):
         res = {}
         res['result']='success'
-        self.write(YZZ_JSON(res))
+        data = yield YZZ_JSON(res)
+        self.write(data)
         self.finish()
 
 application = tornado.web.Application([
