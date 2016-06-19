@@ -35,15 +35,16 @@ class YZZ_JSON(json.JSONEncoder):
         else:
             return super(YZZ_JSON, self).default(obj)
 
-class ImageQr(tornado.web.RequestHandler):
+class MainQr(tornado.web.RequestHandler):
     def get(self):
+        self.write("success")
+    def post(self):
         res = {}
         res['result']='success'
-        self.write("success")
-        # self.write(YZZ_JSON(res))
+        self.write(YZZ_JSON(res))
 
 application = tornado.web.Application([
-    (r"/face/?",ImageQr),
+    (r"/?",MainQr),
 ])
 
 if __name__ == "__main__":
