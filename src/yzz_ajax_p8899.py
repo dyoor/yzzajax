@@ -39,7 +39,7 @@ class YZZ_JSON(json.JSONEncoder):
 
 class MainQr(tornado.web.RequestHandler):
     def get(self):
-        rows = db.execute('SELECT * FROM test_table')
+        rows = db.query('SELECT * FROM test_table')
         print rows
         str = json.dumps(rows)
         self.write(str)
