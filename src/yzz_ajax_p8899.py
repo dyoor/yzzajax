@@ -38,13 +38,12 @@ class YZZ_JSON(json.JSONEncoder):
 class MainQr(tornado.web.RequestHandler):
     def get(self):
         self.write("success")
-        self.finish()
     def post(self):
         res = {}
         res['result']='success'
         data = YZZ_JSON(res)
+        print type(data)
         self.write(data)
-        self.finish()
 
 application = tornado.web.Application([
     (r"/?",MainQr),
