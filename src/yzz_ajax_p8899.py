@@ -14,6 +14,11 @@ import tornado.options
 import tornado.web
 
 import json
+import simplejson
+
+#apt-get install mysql
+#apt-get install libmysqlclient-dev
+#apt-get install MySQL-python
 
 import torndb
 
@@ -32,7 +37,8 @@ class ImageQr(tornado.web.RequestHandler):
     def get(self):
         res = {}
         res['result']='success'
-        self.write(YZZ_JSON(res))
+        self.write("success")
+        # self.write(YZZ_JSON(res))
 
 application = tornado.web.Application([
     (r"/face/?",ImageQr),
