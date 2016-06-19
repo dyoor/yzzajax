@@ -40,7 +40,8 @@ class YZZ_JSON(json.JSONEncoder):
 class MainQr(tornado.web.RequestHandler):
     def get(self):
         rows = db.execute('SELECT * FROM test_table')
-        self.write(rows)
+        str = json.dumps(rows)
+        self.write(str)
     def post(self):
         res = {}
         res['result']='success'
