@@ -24,6 +24,8 @@ import simplejson
 
 import torndb
 
+db = torndb.Connection('127.0.0.1','yzzajax',user='yzz',password='yzz9988')
+
 class YZZ_JSON(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime.datetime):
@@ -37,12 +39,13 @@ class YZZ_JSON(json.JSONEncoder):
 
 class MainQr(tornado.web.RequestHandler):
     def get(self):
-        self.write("success")
+        rows = db.execute('SELECT * FROM test_table')
+        self.write(rows)
     def post(self):
         res = {}
         res['result']='success'
         # data = YZZ_JSON(res)
-        print type(res)
+        # print type(res)
         self.write(res)
 
 application = tornado.web.Application([
