@@ -42,8 +42,8 @@ class MainQr(tornado.web.RequestHandler):
         res = {}
         res['result']='success'
         # data = YZZ_JSON(res)
-        print type(data)
-        self.write(data)
+        print type(res)
+        self.write(res)
 
 application = tornado.web.Application([
     (r"/?",MainQr),
