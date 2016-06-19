@@ -42,7 +42,7 @@ class MainQr(tornado.web.RequestHandler):
     def post(self):
         res = {}
         res['result']='success'
-        data = yield YZZ_JSON(res)
+        data = YZZ_JSON(res)
         self.write(data)
         self.finish()
 
