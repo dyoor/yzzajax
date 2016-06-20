@@ -55,7 +55,8 @@ class PageQr(tornado.web.RequestHandler):
     def get(self,page):
         len = 3
         page_from = page*len
-        rows = db.query('SELECT * FROM test_table LIMIT %d,%d'%(page_from,len))
+        sql = "SELECT * FROM test_table LIMIT {0},{1}".format(page_from,len)
+        rows = db.query(sql)
         str = json.dumps(rows)
         self.write(str)
 
