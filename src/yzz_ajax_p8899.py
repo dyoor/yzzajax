@@ -45,6 +45,11 @@ class MainQr(tornado.web.RequestHandler):
         res = {}
         res['result']='success'
         self.write(res)
+    def put(self):
+        res = {}
+        res['method']='put'
+        res['result']='success'
+        self.write(res)
 
 application = tornado.web.Application([
     (r"/?",MainQr),
