@@ -62,7 +62,7 @@ class PageQr(tornado.web.RequestHandler):
 
 application = tornado.web.Application([
     (r"/?",MainQr),
-    (r"/p/[0-9]+/?",PageQr),
+    (r"/p/([0-9]+)/?",PageQr),
 ])
 
 if __name__ == "__main__":
