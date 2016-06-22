@@ -50,15 +50,14 @@ class MainQr(tornado.web.RequestHandler):
         self.write(res)
 
 class PageQr(tornado.web.RequestHandler):
-    def post(self,page):
+    def get(self,page):
         len = 3
         page_from = page*len
         sql = "SELECT * FROM test_table LIMIT {0},{1}".format(page_from,len)
         rows = db.query(sql)
-        str = json.dumps(rows)
-        self.write(str)
-    def get(self,page):
-        self.render("html/page_template.html")
+        # str = json.dumps(rows)
+        # self.write(str)
+        self.render("html/page_template.html",items=rows)
 
 application = tornado.web.Application([
     (r"/?",MainQr),

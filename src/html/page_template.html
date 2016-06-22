@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<p> h,w </p>
+     <ul>
+       {% for item in items %}
+         <li>{{ escape(item) }}</li>
+       {% end %}
+     </ul>
 
 </body>
 </html>
