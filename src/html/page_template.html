@@ -10,7 +10,7 @@
 
      <ul>
        {% for item in items %}
-         <li>{{ escape(item) }}</li>
+         <li>{{ escape(item['url']) }} {{ escape(item['id']) }}</li>
        {% end %}
      </ul>
 
