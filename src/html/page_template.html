@@ -7,12 +7,16 @@
 
 </head>
 <body>
-
-     <ul>
-       {% for item in items %}
-         <li>{{ escape(item[0]) }} {{ escape(item[1]) }}</li>
-       {% end %}
-     </ul>
+ <table>
+        <tr>
+            <td>URL</td> <td>ID</td>
+        </tr>
+         {% for item in arr %}
+        <tr>
+            <td>{{ item['url'] }}</td> <td>{{ item['id'] }}</td>
+        </tr>
+        {% end %}
+    </table>
 
 </body>
 </html>
