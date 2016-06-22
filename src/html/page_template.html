@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <title></title>
     <script type="text/javascript" src="../js/jquery-3.0.0.min.js"></script>
-
 </head>
 <body>
- <table>
-        <tr>
-            <td>URL</td> <td>ID</td>
-        </tr>
-         {% for item in items %}
-        <tr>
-            <td>{{ item['url'] }}</td> <td>{{ item['id'] }}</td>
-        </tr>
-        {% end %}
-    </table>
-
+<table>
+    <tr>
+        <td>ID</td><td>URL</td>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item['id'] }}</td><td>{{ item['url'] }}</td>
+    </tr>
+    {% end %}
+</table>
 </body>
 </html>
